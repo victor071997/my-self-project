@@ -1,0 +1,9 @@
+region        = "us-east-1"
+r_vpc_cidr    = "10.0.0.0/16"
+r_pub_cidr    = "10.0.1.0/24"
+r_priv_cidr   = "10.0.2.0/24"
+r_ami         = "ami-0c55b159cbfafe1f0"
+r_type        = "t2.micro"
+r_ssh_port    = 22
+r_allowed_ip  = ["0.0.0.0/0"]
+r_bucket_name = "interview-unique-bucket-2026"
