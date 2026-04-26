@@ -14,6 +14,7 @@ module "ec2_module" {
   vpc_id     = module.vpc_module.vpc_id
   subnet_id  = module.vpc_module.pub_subnet_id
   ami        = var.r_ami
+  key_pair_name = var.existing_key_name
   type       = var.r_type
   ssh_port   = var.r_ssh_port
   allowed_ip = var.r_allowed_ip
