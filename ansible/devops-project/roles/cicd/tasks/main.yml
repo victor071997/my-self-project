@@ -1,0 +1,36 @@
+---
+- name: Install Java 17
+  apt:
+    name: openjdk-17-jdk
+    state: present
+    update_cache: yes
+
+- name: Add Jenkins Key
+  apt_key:
+    url: https://jenkins.io
+    state: present
+
+- name: Add Jenkins Repo
+  apt_repository:
+    repo: deb https://jenkins.io binary/
+    state: present
+
+- name: Install Jenkins and Maven
+  apt:
+    name: [jenkins, maven]
+    state: present
+
+- name: Start Jenkins
+  service:
+    name: jenkins
+    state: started
+    enabled: yes
+
+- name: Install Trivy
+  shell: |
+    wget -qO - https://github.io | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+    echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://github.io {{ ansible_distribution_release }} main" | sudo tee /etc/apt/sources.list.d/trivy.list
+    apt-get update
+    apt-get install trivy -y
+  args:
+    creates: /usr/share/keyrings/trivy.gpg

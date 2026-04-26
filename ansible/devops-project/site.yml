@@ -1,0 +1,12 @@
+---
+- name: Deploy SonarQube to Worker 1
+  hosts: sonar_node
+  become: true
+  roles:
+    - docker_sonar
+
+- name: Deploy CI/CD Tools to Worker 2
+  hosts: cicd_node
+  become: true
+  roles:
+    - cicd_tools
