@@ -1,5 +1,5 @@
 region        = "us-east-1"
-existing_key_name = ""
+existing_key_name = "asia-hyder"
 r_vpc_cidr    = "10.0.0.0/16"
 r_pub_cidr    = "10.0.1.0/24"
 r_priv_cidr   = "10.0.2.0/24"
