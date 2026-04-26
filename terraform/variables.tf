@@ -1,4 +1,8 @@
 variable "region" {}
+variable "existing_key_name" {
+  type        = string
+}
+
 variable "r_vpc_cidr" {}
 variable "r_pub_cidr" {}
 variable "r_priv_cidr" {}
