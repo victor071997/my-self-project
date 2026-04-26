@@ -1,1 +1,5 @@
-output "vm_public_ip" { value = aws_instance.vm.public_ip } 
+output "public_ip" {
+  description = "The ephemeral public IP of the instance"
+  value       = aws_instance.web.public_ip
+}
+
