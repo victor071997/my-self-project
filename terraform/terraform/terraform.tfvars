@@ -5,5 +5,6 @@ r_priv_cidr   = "10.0.2.0/24"
 r_ami         = "ami-0c55b159cbfafe1f0"
 r_type        = "t2.micro"
 r_ssh_port    = 22
-r_allowed_ip  = ["0.0.0.0/0"]
+# r_allowed_ip = ["0.0.0.0/0"]
+r_key_name     = "your-existing-key-name" 
 r_bucket_name = "interview-unique-bucket-2026"
