@@ -18,6 +18,9 @@ module "ec2_module" {
   ssh_port   = var.r_ssh_port
   allowed_ip = var.r_allowed_ip
 }
+output "final_instance_ip" {
+  value = module.ec2.public_ip
+}
 
 module "s3_module" {
   source      = "./modules/s3"
