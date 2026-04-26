@@ -1,5 +1,6 @@
 resource "aws_security_group" "sg" {
   vpc_id = var.vpc_id
+  key_name      = var.key_pair_name
   name   = "ec2-security-group"
 
   ingress {
