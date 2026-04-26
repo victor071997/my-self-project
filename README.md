@@ -70,6 +70,10 @@ devops-project/
         └── tasks/
             └── main.yml
 
+$ ansible-playbook site.yml  # just one command
+$ ansible-playbook site.yml --limit cicd_node  # if you want to run only ci_cd node
+
+
 
 
 
